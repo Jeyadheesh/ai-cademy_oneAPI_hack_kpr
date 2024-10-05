@@ -68,10 +68,11 @@ export default function Home() {
               AI Assessment
             </h3>
             <p className="shrink-1 text-lg">
-              Story Narrator brings your tales to life with captivating voice
-              narration. Whether it's a bedtime story or a grand adventure, the
-              AI-powered narrator adds emotion and depth, creating an immersive
-              listening experience.
+              The AI-Assessment module is an intelligent quiz generator designed
+              to assess users' knowledge on any given topic through
+              multiple-choice questions (MCQs). It uses an advanced language
+              model to dynamically create relevant, topic-specific questions and
+              provide immediate feedback to enhance the learning experience.
             </p>
             <Link
               href={"/assessment/none"}
