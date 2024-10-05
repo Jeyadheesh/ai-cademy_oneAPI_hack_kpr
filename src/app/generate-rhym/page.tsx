@@ -9,6 +9,7 @@ import { useStore } from "@/store/useComic";
 import { cn } from "@/lib/generate-comic/cn";
 import { fonts } from "@/lib/generate-comic/fonts";
 import { FaGear } from "react-icons/fa6";
+import Link from "next/link";
 
 type Rhymes = {
   id?: string;
@@ -189,17 +190,18 @@ const GenerateRhym = () => {
         </div>
       </div>
 
-      <div className="flex gap-4 items-center ">
-        <div
-          onClick={() => router.push("/dashboard")}
-          className="bg-priClr text-white capitalize border-[3px] border-black boxShadow flex items-center gap-2 px-3 py-2 rounde-md shadow-black shadow-sm font-semibold"
+      <div className="flex gap-4 items-center relative">
+        <div className="bg-black/30 absolute top-0 left-0 w-full h-full z-40" />
+        <Link
+          href={"/"}
+          className="bg-priClr z-50 text-white capitalize border-[3px] border-black boxShadow flex items-center gap-2 px-3 py-2 rounde-md shadow-black shadow-sm font-semibold"
         >
           <BiChevronLeft className="text-3xl " />
-        </div>
+        </Link>
         <input
           placeholder="Enter Prompt"
           className={
-            "p-4 border-2 border-priClr bg-white  boxShadow outline-0 w-full"
+            "p-4 py-3 border-2 border-priClr bg-white  boxShadow outline-0 w-full"
           }
           onChange={(e) => {
             setInput(e.target.value);
@@ -221,6 +223,13 @@ const GenerateRhym = () => {
           <p className="text-white font-black tracking-widest">Generate Rhym</p>
         </button>
       </div>
+
+      <h3 className="text-xl font-semibold text-center py-2">
+        Suno Modal needs to be running on local to generate Rhymes, but since
+        it's not running, You can check previously generated Rhyms.<br></br>
+        <span>{`Kindly use mobile network or any network other than College Network As
+        Mongo DB is blocked in College Network`}</span>
+      </h3>
 
       {/* Result Rhymes */}
       {isResulted && old.length > 0 && (
