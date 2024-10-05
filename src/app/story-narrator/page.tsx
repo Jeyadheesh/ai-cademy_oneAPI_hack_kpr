@@ -9,6 +9,7 @@ import { FaVolumeUp } from "react-icons/fa";
 import { ElevenLabsClient } from "elevenlabs";
 import { cn } from "@/lib/generate-comic/cn";
 import { FaGear } from "react-icons/fa6";
+import Link from "next/link";
 
 const StoryNarrator = () => {
   const [input, setInput] = useState("");
@@ -153,14 +154,14 @@ const StoryNarrator = () => {
 
   return (
     <main className="p-5 flex flex-col gap-2  bg min-h-screen ">
-      <div className="flex gap-4 items-center ">
-        <div
-          onClick={() => router.push("/dashboard")}
-          // href={"/dashboard"}
-          className="bg-priClr  text-white capitalize border-[3px] border-black boxShadow flex items-center gap-2 px-3 py-2 rounde-md shadow-black shadow-sm font-semibold"
+      <div className="flex gap-4 items-center relative ">
+        <div className="bg-black/30 absolute top-0 left-0 w-full h-full z-40" />
+        <Link
+          href={"/"}
+          className="bg-priClr  text-white capitalize z-50 border-[3px] border-black boxShadow flex items-center gap-2 px-3 py-2 rounde-md shadow-black shadow-sm font-semibold"
         >
           <BiChevronLeft className="text-3xl " />
-        </div>
+        </Link>
         <input
           placeholder="Enter Title For Story"
           className={
@@ -206,6 +207,9 @@ const StoryNarrator = () => {
           </p>
         </button>
       </div>
+      <h3 className="text-2xl font-semibold text-center py-2">
+        {"Llama 3.1 needs to be running on local"}
+      </h3>
       {/* #### New Story #### */}
       {stories.length > 0 ? (
         <div className="p-6 boxShadow bg-white border-2 border-priClr mt-8">
