@@ -17,7 +17,7 @@ const StoryNarrator = () => {
   const [history, setHistory] = useState([
     {
       role: "system",
-      content: `Imagine you're a creative story narrator. You're here to help me create an interactive story based on user input. Generate the story in the topic of <user input title> and in the theme of <user input theme>. You'll kick things off with an opening line, then generate multiple options of the story flow and ask for the user to select options and guide the story flow. With each response, you'll continue the story and generate new options, waiting for the user to select again, making the process fun and engaging. The response or solution you're providing should always be in JSON FORMAT.\n\nFor example title: "Lost City", theme: "Adventure":\n\nNow, let's begin our story!\n\nYou've always been fascinated by the stories of a hidden city deep within the jungle. They call it Zerzura, a place where ancient treasures and mysterious artifacts lie waiting to be discovered.\n\nAs you venture into the dense foliage, the sounds of the jungle grow louder, and the air thickens with humidity. You push through the underbrush, your heart racing with excitement.\n\nHere are your options:\n\n json\n{\n  \"options\": [\n    {\n      \"description\": \"Follow the sound of a nearby river, which might lead you to Zerzura\"\n    },\n    {\n      \"description\": \"Climb one of the tall trees to get a better view of your surroundings\"\n    },\n    {\n      \"description\": \"Search for any signs of recent human presence or ancient ruins\"\n    }\n  ]\n}\n\n\nWhich option do you choose? Please respond in JSON format with the selected option number (1, 2, or 3).`,
+      content: `Imagine you're a creative teacher. You're here to help me create an interactive story that teaches me the concept which user has entered. Generate the story in the topic of <user input title> and in the theme of <user input theme>. You'll kick things off with an opening line, then generate multiple options of the story flow and ask for the user to select options and guide the story flow. With each response, you'll continue the story and generate new options, waiting for the user to select again, making the process fun and engaging. The response or solution you're providing should always be in JSON FORMAT.\n\nFor example title: "Lost City", theme: "Adventure":\n\nNow, let's begin our story!\n\nYou've always been fascinated by the stories of a hidden city deep within the jungle. They call it Zerzura, a place where ancient treasures and mysterious artifacts lie waiting to be discovered.\n\nAs you venture into the dense foliage, the sounds of the jungle grow louder, and the air thickens with humidity. You push through the underbrush, your heart racing with excitement.\n\nHere are your options:\n\n json\n{\n  \"options\": [\n    {\n      \"description\": \"Follow the sound of a nearby river, which might lead you to Zerzura\"\n    },\n    {\n      \"description\": \"Climb one of the tall trees to get a better view of your surroundings\"\n    },\n    {\n      \"description\": \"Search for any signs of recent human presence or ancient ruins\"\n    }\n  ]\n}\n\n\nWhich option do you choose? Please respond in JSON format with the selected option number (1, 2, or 3).`,
     },
   ]);
 
@@ -155,10 +155,10 @@ const StoryNarrator = () => {
   return (
     <main className="p-5 flex flex-col gap-2  bg min-h-screen ">
       <div className="flex gap-4 items-center relative ">
-        <div className="bg-black/30 absolute top-0 left-0 w-full h-full z-40" />
+        {/* <div className="bg-black/30 absolute top-0 left-0 w-full h-full z-40" /> */}
         <Link
           href={"/"}
-          className="bg-priClr  text-white capitalize z-50 border-[3px] border-black boxShadow flex items-center gap-2 px-3 py-2 rounde-md shadow-black shadow-sm font-semibold"
+          className="bg-priClr  text-white capitalize border-[3px] border-black boxShadow flex items-center gap-2 px-3 py-2 rounde-md shadow-black shadow-sm font-semibold"
         >
           <BiChevronLeft className="text-3xl " />
         </Link>
@@ -207,9 +207,9 @@ const StoryNarrator = () => {
           </p>
         </button>
       </div>
-      <h3 className="text-2xl font-semibold text-center py-2">
+      {/* <h3 className="text-2xl font-semibold text-center py-2">
         {"Llama 3.1 needs to be running on local"}
-      </h3>
+      </h3> */}
       {/* #### New Story #### */}
       {stories.length > 0 ? (
         <div className="p-6 boxShadow bg-white border-2 border-priClr mt-8">
